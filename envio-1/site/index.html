@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Torneagro — Reparos e fabricação para o agro</title>
+  <meta name="description" content="Torneagro: restauração, fabricação, solda, torno e prensagem de mangueiras hidráulicas para o agronegócio.">
+  <meta name="theme-color" content="#092b17">
+  <link rel="icon" type="image/png" href="assets/icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@500;600;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="grid-lines"><span></span><span></span><span></span></div>
+    <img class="loader__logo" src="assets/logo-branco.png" alt="">
+    <div class="loader__count mono" id="loaderCount">000</div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <a href="#top" class="logo" aria-label="Torneagro — início"></a>
+    <div class="header__meta mono">
+      <span>Reparos e fabricação</span>
+      <span id="clock">Brasília --:--</span>
+    </div>
+    <button class="menu-btn mono" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+  </header>
+
+  <nav class="menu" id="menu" aria-hidden="true">
+    <ul>
+      <li><a href="#sobre"><span class="mono">[02]</span> Sobre</a></li>
+      <li><a href="#rosca"><span class="mono">[03]</span> Rosca helicoidal</a></li>
+      <li><a href="#servicos"><span class="mono">[04]</span> Serviços</a></li>
+      <li><a href="#estrutura"><span class="mono">[ + ]</span> Estrutura</a></li>
+      <li><a href="#processo"><span class="mono">[05]</span> Como funciona</a></li>
+      <li><a href="#missao"><span class="mono">[06]</span> Missão</a></li>
+      <li><a href="#faq"><span class="mono">[07]</span> Dúvidas</a></li>
+      <li><a href="#contato"><span class="mono">[08]</span> Contato</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+    <!-- Intro: vídeo controlado pela rolagem -->
+    <section class="intro" id="intro" aria-label="Apresentação Torneagro">
+      <div class="intro__sticky">
+        <canvas class="intro__canvas" id="introCanvas"></canvas>
+        <div class="intro__shade"></div>
+
+        <div class="intro__layer intro__l1">
+          <img class="intro__logo" src="assets/logo-branco.png" alt="Torneagro — A solução que você precisa!">
+        </div>
+        <div class="intro__layer intro__l2">
+          <p class="mono">[ Força no campo ]</p>
+          <h2 class="intro__title">Máquina boa é máquina <em>trabalhando.</em></h2>
+        </div>
+        <div class="intro__layer intro__l3">
+          <h2 class="intro__title">Quando ela para,<br>a <em>Torneagro</em> resolve.</h2>
+          <a href="#servicos" class="btn btn--green mono">Conheça os serviços <i>→</i></a>
+        </div>
+
+        <div class="intro__hint mono" id="introHint">Role para avançar <span>↓</span></div>
+        <div class="intro__bar"><span id="introBar"></span></div>
+      </div>
+    </section>
+
+    <!-- [01] Hero -->
+    <section class="hero brand">
+      <div class="grid-lines"><span></span><span></span><span></span></div>
+      <div class="wrap">
+        <p class="label mono reveal"><span>[01]</span> Oficina para o agronegócio <span class="blink">_</span></p>
+        <h1 class="hero__title reveal">
+          Sua máquina <span class="tag">[parada]</span> de volta ao campo <span class="tag">[rápido]</span>.
+        </h1>
+        <div class="hero__bottom">
+          <p class="hero__lead reveal">Restauração, fabricação de peças, solda e torno em um só lugar — para o produtor resolver o problema sem rodar a cidade atrás de oficina.</p>
+          <a href="https://wa.me/556136332392" target="_blank" rel="noopener" class="btn btn--dark mono reveal">Chamar no WhatsApp <i>→</i></a>
+        </div>
+        <div class="hero__card reveal">
+          <div class="hero__photo">
+            <img src="assets/foto-aerea-2.png" alt="Vista aérea da sede da Torneagro" loading="eager">
+          </div>
+          <div class="hero__screen">
+            <div class="flow">
+              <span class="node">Chegou</span><span class="wire"></span>
+              <span class="node node--hot">Oficina</span><span class="wire"></span>
+              <span class="node">Campo</span>
+            </div>
+            <div class="flow-log mono" id="flowLog"></div>
+          </div>
+          <div class="hero__card-meta mono">
+            <span>▶ O que passa pela oficina</span>
+          </div>
+        </div>
+        <div class="hero__foot mono reveal">
+          <span>Torno • Solda • Fabricação</span>
+          <span>Inox e alumínio</span>
+          <span>Mangueiras hidráulicas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- [02] Sobre -->
+    <section class="about light" id="sobre">
+      <div class="grid-lines"><span></span><span></span><span></span></div>
+      <div class="wrap">
+        <p class="label mono reveal"><span>[02]</span> Quem somos <span class="blink">_</span></p>
+        <h2 class="big reveal">Um endereço só para consertar, fabricar e manter o agro rodando.</h2>
+        <div class="about__row">
+          <div class="reveal">
+            <img class="about__logo" src="assets/logo-vertical.png" alt="Torneagro — A solução que você precisa!" loading="lazy">
+          </div>
+          <blockquote class="quote reveal">
+            <span class="quote__mark">“</span>
+            Atendemos fazendeiros, cooperativas e empresas do agronegócio. <b>Nosso compromisso é entregar serviço bem feito, no prazo que o campo exige.</b>
+            <footer class="person mono"><img class="dot" src="assets/icone.png" alt=""><span><b>Torneagro</b><br>A solução que você precisa!</span></footer>
+          </blockquote>
+        </div>
+        <div class="caps">
+          <div class="cap reveal"><b>Restau<em>ração</em></b><span class="mono">Recuperação e embuchamento</span></div>
+          <div class="cap reveal"><b>Fabri<em>cação</em></b><span class="mono">Peças sob medida e em inox</span></div>
+          <div class="cap reveal"><b>So<em>lda</em></b><span class="mono">Alumínio e inox · MIG e TIG</span></div>
+          <div class="cap reveal"><b>Tor<em>no</em></b><span class="mono">Usinagem e prensagem</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee de serviços -->
+    <section class="marq steel">
+      <div class="marquee"><div class="marquee__track mono" data-dir="left">
+        <span>Barras e quadros</span><span>Cilindros hidráulicos</span><span>Pistões</span><span>Eixos</span><span>Embuchamento</span>
+      </div></div>
+      <div class="marquee"><div class="marquee__track mono" data-dir="right">
+        <span>Marcas de gado em inox</span><span>Guincho big bag</span><span>Conchas para pá</span><span>Peças exclusivas</span>
+      </div></div>
+      <h2 class="marq__title reveal">Quebrou no campo?<br>Resolve na Torneagro.</h2>
+      <div class="marquee"><div class="marquee__track mono" data-dir="left">
+        <span>Solda em alumínio</span><span>Solda em inox</span><span>MIG e TIG</span><span>Serviços de torno</span><span>Prensagem de mangueiras</span><span>Rosca helicoidal</span>
+      </div></div>
+    </section>
+
+    <!-- [03] Destaque: Rosca Helicoidal -->
+    <section class="feature light" id="rosca">
+      <div class="wrap feature__grid">
+        <div class="feature__box dark reveal">
+          <span class="badge mono">Destaque</span>
+          <h3>Rosca helicoidal</h3>
+          <div class="helix" aria-hidden="true"></div>
+          <ul class="ticks">
+            <li><b>Preço competitivo</b>Condição que se destaca na região, sem abrir mão da qualidade.</li>
+            <li><b>Alto desempenho</b>Feita para mover produção com eficiência no dia a dia.</li>
+            <li><b>Várias aplicações</b>Do agro à indústria de alimentos e à construção.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="label mono reveal"><span>[03]</span> Produto em destaque <span class="blink">_</span></p>
+          <h2 class="big reveal">Mais produção, menos gargalo.</h2>
+          <p class="small reveal">Conte para a gente a aplicação, o material transportado e as medidas. Montamos a rosca certa para o seu caso.</p>
+          <a href="https://wa.me/556136332392?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20rosca%20helicoidal." target="_blank" rel="noopener" class="btn btn--green mono reveal" style="margin-top:24px">Pedir orçamento <i>→</i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- [04] Serviços -->
+    <section class="services dark" id="servicos">
+      <div class="wrap">
+        <p class="label mono reveal"><span>[04]</span> O que fazemos <span class="blink">_</span></p>
+        <h2 class="big reveal">Tudo o que a sua máquina precisa, em um só lugar.</h2>
+        <div class="acc" data-single>
+          <article class="acc__item is-open">
+            <button class="acc__head"><span class="mono">01</span><h3>Restauração</h3><i></i></button>
+            <div class="acc__body"><div>
+              <p class="mono">Recuperação e embuchamento de componentes desgastados.</p>
+              <ul class="chips mono"><li>Barras e quadros</li><li>Cilindros hidráulicos</li><li>Pistões</li><li>Eixos</li></ul>
+            </div></div>
+          </article>
+          <article class="acc__item">
+            <button class="acc__head"><span class="mono">02</span><h3>Fabricação</h3><i></i></button>
+            <div class="acc__body"><div>
+              <p class="mono">Peças sob encomenda, inclusive projetos exclusivos.</p>
+              <ul class="chips mono"><li>Marcas de gado em inox</li><li>Guincho big bag</li><li>Conchas para pá</li><li>Peças exclusivas</li></ul>
+            </div></div>
+          </article>
+          <article class="acc__item">
+            <button class="acc__head"><span class="mono">03</span><h3>Solda</h3><i></i></button>
+            <div class="acc__body"><div>
+              <p class="mono">Soldagem para metais que exigem técnica.</p>
+              <ul class="chips mono"><li>Alumínio</li><li>Inox</li><li>MIG</li><li>TIG</li></ul>
+            </div></div>
+          </article>
+          <article class="acc__item">
+            <button class="acc__head"><span class="mono">04</span><h3>Torno e hidráulica</h3><i></i></button>
+            <div class="acc__body"><div>
+              <p class="mono">Usinagem e montagem de mangueiras.</p>
+              <ul class="chips mono"><li>Serviços de torno</li><li>Prensagem de mangueiras hidráulicas</li></ul>
+            </div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nossa estrutura (fotos) -->
+    <section class="gallery dark" id="estrutura">
+      <div class="wrap">
+        <p class="label mono reveal"><span>[ + ]</span> Nossa estrutura <span class="blink">_</span></p>
+        <h2 class="big reveal">Oficina pronta para receber a sua máquina.</h2>
+        <div class="gallery__grid">
+          <figure class="shot shot--wide reveal">
+            <img src="assets/foto-aerea-1.png" alt="Vista aérea do pátio da Torneagro com caminhão e máquinas" loading="lazy">
+            <figcaption class="mono">Pátio e oficina</figcaption>
+          </figure>
+          <figure class="shot reveal">
+            <img src="assets/foto-inauguracao.png" alt="Fachada da Torneagro com clientes na inauguração" loading="lazy">
+            <figcaption class="mono">Inauguração da loja</figcaption>
+          </figure>
+          <figure class="shot reveal">
+            <img src="assets/foto-aerea-2.png" alt="Vista aérea do galpão e da loja Torneagro" loading="lazy">
+            <figcaption class="mono">Galpão e loja</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- [05] Processo -->
+    <section class="process brand" id="processo">
+      <div class="grid-lines"><span></span><span></span><span></span></div>
+      <div class="wrap">
+        <p class="label mono reveal"><span>[05]</span> Como funciona <span class="blink">_</span></p>
+        <h2 class="big reveal">Do chamado à peça pronta.</h2>
+        <ol class="steps">
+          <li class="reveal"><span class="mono">Passo 1</span><h3>Chame</h3><p>Mande fotos e medidas pelo WhatsApp.</p></li>
+          <li class="reveal"><span class="mono">Passo 2</span><h3>Avaliamos</h3><p>Analisamos a peça e passamos o orçamento.</p></li>
+          <li class="reveal"><span class="mono">Passo 3</span><h3>Executamos</h3><p>Restauração ou fabricação na oficina.</p></li>
+          <li class="reveal"><span class="mono">Passo 4</span><h3>Entregamos</h3><p>Peça pronta para voltar ao trabalho.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- [06] Missão / Visão -->
+    <section class="mission light" id="missao">
+      <div class="wrap">
+        <p class="label mono reveal"><span>[06]</span> No que acreditamos <span class="blink">_</span></p>
+        <div class="slider reveal" id="slider">
+          <div class="slides">
+            <figure class="slide is-active">
+              <span class="mono">Missão</span>
+              <blockquote>Entregar qualidade e rapidez para a satisfação de cada cliente.</blockquote>
+            </figure>
+            <figure class="slide">
+              <span class="mono">Visão</span>
+              <blockquote>Ser referência em soluções para o agronegócio.</blockquote>
+            </figure>
+            <figure class="slide">
+              <span class="mono">Compromisso</span>
+              <blockquote>Resolver o seu problema em um único lugar.</blockquote>
+            </figure>
+          </div>
+          <div class="slider__nav">
+            <button class="round" data-dir="-1" aria-label="Anterior">←</button>
+            <span class="mono" id="slideIdx">01 / 03</span>
+            <button class="round" data-dir="1" aria-label="Próximo">→</button>
+          </div>
+        </div>
+        <div class="segments">
+          <div class="reveal"><b>Fazendeiros</b><span class="mono">Manutenção que não para a safra</span></div>
+          <div class="reveal"><b>Cooperativas</b><span class="mono">Parceria para frotas e equipamentos</span></div>
+          <div class="reveal"><b>Empresas</b><span class="mono">Peças sob medida para a operação</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [07] FAQ -->
+    <section class="faq light" id="faq" style="border-top:1px solid var(--line)">
+      <div class="wrap faq__grid">
+        <div>
+          <p class="label mono reveal"><span>[07]</span> Dúvidas <span class="blink">_</span></p>
+          <h2 class="big reveal">Perguntas frequentes</h2>
+        </div>
+        <div class="acc">
+          <article class="acc__item"><button class="acc__head"><span class="mono">01</span><h3>Vocês fabricam peças sob medida?</h3><i></i></button><div class="acc__body"><div><p>Sim. Além das peças de linha, fabricamos peças exclusivas a partir da sua necessidade.</p></div></div></article>
+          <article class="acc__item"><button class="acc__head"><span class="mono">02</span><h3>Com quais materiais vocês soldam?</h3><i></i></button><div class="acc__body"><div><p>Trabalhamos com solda em alumínio e inox, nos processos MIG e TIG.</p></div></div></article>
+          <article class="acc__item"><button class="acc__head"><span class="mono">03</span><h3>Como peço um orçamento?</h3><i></i></button><div class="acc__body"><div><p>Chame no WhatsApp (61) 3633-2392 com fotos e, se possível, as medidas da peça.</p></div></div></article>
+          <article class="acc__item"><button class="acc__head"><span class="mono">04</span><h3>A rosca helicoidal serve para o meu setor?</h3><i></i></button><div class="acc__body"><div><p>Ela atende várias aplicações, do agronegócio à indústria alimentícia e à construção. Fale com a gente para dimensionar.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- [08] Contato -->
+    <section class="contact dark" id="contato">
+      <div class="grid-lines"><span></span><span></span><span></span></div>
+      <div class="wrap contact__grid">
+        <div>
+          <p class="label mono reveal"><span>[08]</span> Fale com a gente <span class="blink">_</span></p>
+          <h2 class="big reveal">Qual peça precisa voltar ao trabalho?</h2>
+          <ul class="checks mono reveal"><li>Restauração</li><li>Fabricação</li><li>Solda e torno</li></ul>
+          <div class="direct reveal">
+            <a href="https://wa.me/556136332392" target="_blank" rel="noopener"><span>WhatsApp (61) 3633-2392</span><span>↗</span></a>
+            <a href="https://www.instagram.com/torneagro/" target="_blank" rel="noopener"><span>Instagram @torneagro</span><span>↗</span></a>
+          </div>
+        </div>
+        <form class="form steel reveal" id="form" novalidate>
+          <label><span class="mono">Nome*</span><input name="nome" required></label>
+          <label><span class="mono">Cidade</span><input name="cidade"></label>
+          <label class="full"><span class="mono">Serviço</span>
+            <select name="servico"><option>Restauração</option><option>Fabricação</option><option>Solda</option><option>Torno</option><option>Mangueiras hidráulicas</option><option>Rosca helicoidal</option></select>
+          </label>
+          <label class="full"><span class="mono">Descreva o que precisa*</span><textarea name="msg" rows="3" required></textarea></label>
+          <button class="btn btn--green mono full" type="submit">Enviar pelo WhatsApp <i>→</i></button>
+          <p class="form__status mono full" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer dark">
+    <div class="footer__big" role="img" aria-label="Torneagro — A solução que você precisa!"></div>
+    <div class="footer__row mono">
+      <span>© <span id="year"></span> Torneagro — Todos os direitos reservados</span>
+      <nav>
+        <a href="https://www.instagram.com/torneagro/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/556136332392" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#top">Topo ↑</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
